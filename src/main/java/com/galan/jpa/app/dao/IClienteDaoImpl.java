@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IClienteDaoImpl {
     List<Cliente> listar();
+
+    void save(Cliente cliente);
 }

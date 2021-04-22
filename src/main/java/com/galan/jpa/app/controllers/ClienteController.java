@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ClienteController {
@@ -30,5 +31,11 @@ public class ClienteController {
         model.addAttribute("cliente", cliente);
 
         return "form";
+    }
+
+    @PostMapping("/form")
+    public String getForm(Cliente cliente, Model model){
+        clienteDao.save(cliente);
+        return "redirect:/listar";
     }
 }

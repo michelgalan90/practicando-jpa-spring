@@ -29,6 +29,11 @@ public class Cliente {
         this.fecha = fecha;
     }
 
+    @PrePersist
+    public void generarFecha(){
+        this.fecha = new Date();
+    }
+
     public Long getId() {
         return id;
     }
